@@ -17,5 +17,15 @@ namespace SportsOddsAnalyzer.Services
 
             return response;
         }
+
+        public async Task<List<Event>> GetEventsByKeyAsync(string sportKey)
+        {
+            string url = $"https://api.the-odds-api.com/v4/sports/{sportKey}/odds?regions=uk&oddsFormat=decimal&apiKey=326babd30e8c2f8f6b0c12090e57ec55";
+
+            var response = await _http.GetFromJsonAsync<List<Event>>(url)
+                ?? throw new HttpIOException(HttpRequestError.InvalidResponse, $"Failed to retrieve events for sport key: {sportKey}");
+
+            return response;
+        }
     }
 }
