@@ -17,20 +17,17 @@
     </div>
     <div class="row g-3">
         <div class="col-12">
-            @if (sports == null)
+            @if (isLoading)
             {
-                <div class="d-flex justify-content-center align-items-center">
-                    @if (isLoading)
-                    {
-                        <div class="text-center py-5">
-                            <div class="spinner-border text-primary" role="status"></div>
-                            <div class="mt-2 text-muted">Loading sports...</div>
-                        </div>
-                    }
-                    else
-                    {
-                        <h2 class="text-danger">Failed to in-season sports</h2>
-                    }
+                <div class="text-center py-5">
+                    <div class="spinner-border text-primary"></div>
+                    <div class="mt-2 text-muted">Loading in-season sports...</div>
+                </div>
+            }
+            else if (!sports.Any())
+            {
+                <div class="alert alert-warning text-center">
+                    No sports are currently available.
                 </div>
             }
             else
@@ -46,6 +43,7 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach (var sport in sports.OrderBy(s => s.Title))
                             {
@@ -53,24 +51,14 @@
                                     <td>@sport.Title</td>
                                     <td>@sport.Description</td>
                                     <td>
-                                        @if (sport.Active)
-                                        {
-                                            <span class="badge bg-success">Yes</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge bg-danger">No</span>
-                                        }
+                                        <span class="badge @(sport.Active ? "bg-success" : "bg-danger")">
+                                            @(sport.Active ? "Yes" : "No")
+                                        </span>
                                     </td>
                                     <td>
-                                        @if (sport.HasOutrights)
-                                        {
-                                            <span class="badge bg-primary">Yes</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge bg-secondary">No</span>
-                                        }
+                                        <span class="badge @(sport.HasOutrights ? "bg-primary" : "bg-secondary")">
+                                            @(sport.HasOutrights ? "Yes" : "No")
+                                        </span>
                                     </td>
                                     <td>
                                         <button class="btn btn-sm btn-primary">
