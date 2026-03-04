@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11520.95 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D2D61915-1406-4932-B96A-D20478334609}") = "SportsOddsAnalyzer", "SportsOddsAnalyzer.csproj", "{709851D0-D9E6-4CBB-BC07-30B0275E0E06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsOddsAnalyzer", "SportsOddsAnalyzer.csproj", "{709851D0-D9E6-4CBB-BC07-30B0275E0E06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
