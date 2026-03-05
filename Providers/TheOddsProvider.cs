@@ -4,10 +4,10 @@ using SportsOddsAnalyzer.Interfaces;
 
 namespace SportsOddsAnalyzer.Providers
 {
-    public class TheOddsProvider(HttpClient httpClient, IConfiguration config) : ITheOddsProvider
+    public class TheOddsProvider(HttpClient httpClient) : ITheOddsProvider
     {
         private readonly HttpClient _http = httpClient;
-        private readonly string? _apiKey = config["TheOddsKey"];
+        private readonly string _apiKey = "326babd30e8c2f8f6b0c12090e57ec55";
 
         public async Task<List<Sport>> GetInSeasonSportsAsync()
         {
