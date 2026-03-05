@@ -9,6 +9,8 @@ namespace SportsOddsAnalyzer.Models
 
         [JsonPropertyName("last_update")]
         public DateTime? LastUpdate { get; set; }
-        public List<Outcome> OutComes { get; set; } = [];
+
+        [JsonPropertyName("outcomes")]
+        public List<Outcome> Outcomes { get; set; } = [];
     }
 }

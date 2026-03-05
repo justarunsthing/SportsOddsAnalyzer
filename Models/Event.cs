@@ -21,7 +21,9 @@ namespace SportsOddsAnalyzer.Models
 
         [JsonPropertyName("away_team")]
         public string? AwayTeam { get; set; }
-        public List<BookMaker> BookMakers { get; set; } = [];
+
+        [JsonPropertyName("bookmakers")]
+        public List<BookMaker> Bookmakers { get; set; } = [];
         public string? MatchDisplay => $"{HomeTeam} vs {AwayTeam}";
         public string? FormattedDate => CommenceTime?.ToString("dd MMM yyyy HH:mm");
     }

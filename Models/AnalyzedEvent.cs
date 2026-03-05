@@ -2,6 +2,7 @@
 {
     public class AnalyzedEvent : Event
     {
+        public List<BookmakerOdds> FlatBookmakers { get; set; } = [];
         public BestOddsSummary BestOdds { get; set; } = new();
         public MarginInfo Margin { get; set; } = new();
         public ConsensusOdds Consensus { get; set; } = new();
