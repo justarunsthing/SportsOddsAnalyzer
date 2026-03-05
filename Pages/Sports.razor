@@ -2,7 +2,7 @@
 
 @inject ITheOddsService TheOddsService
 
-<PageTitle>Sports</PageTitle>
+<PageTitle>In-Season Sports</PageTitle>
 
 <div class="container-xxl py-3">
     <div class="row mt-3">
@@ -120,7 +120,7 @@
                                                 @(evt.CommenceTime?.ToString("dd MMM yyyy HH:mm") ?? "N/A")
                                             </td>
                                             <td>
-                                                <a href="/event-details/@selectedSportKey/@evt.Id" class="btn btn-sm btn-primary">
+                                                <a href="/event-details/@selectedSportKey/@evt.Id" class="btn btn-sm btn-primary" target="_blank">
                                                     Details
                                                 </a>
                                             </td>

@@ -2,6 +2,10 @@
 
 @inject ITheOddsService TheOddsService
 
+<PageTitle>
+    @(analyzedEvent != null ? $"Odds Analysis | {analyzedEvent.MatchDisplay}" : "Event Details")
+</PageTitle>
+
 <div class="container my-4">
     @if (analyzedEvent == null && !isLoading)
     {
@@ -27,7 +31,7 @@
             <div class="card-body">
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <strong>Sport:</strong> @analyzedEvent.SportTitle
+                        <strong>Competition:</strong> @analyzedEvent.SportTitle
                     </div>
                     <div class="col-md-6 text-end">
                         <strong>@analyzedEvent.FlatBookmakers.Count</strong> bookmakers
